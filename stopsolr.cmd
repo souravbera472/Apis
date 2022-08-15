@@ -1,0 +1,3 @@
+@echo off
+@echo solr is stopping ....
+@bin\solr\bin\solr.cmd stop -all
