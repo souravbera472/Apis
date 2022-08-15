@@ -1,0 +1,811 @@
+2022-07-23 07:47:22.185 INFO  (main) [   ] o.e.j.u.log Logging initialized @2625ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-07-23 07:47:22.635 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 17.0.3.1+2-LTS-6
+2022-07-23 07:47:22.654 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///D:/SpringApi/bin/solr/server/contexts/] at interval 0
+2022-07-23 07:47:23.412 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2022-07-23 07:47:23.431 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2022-07-23 07:47:23.431 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2022-07-23 07:47:23.435 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
+2022-07-23 07:47:23.562 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2022-07-23 07:47:23.572 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.11.2
+2022-07-23 07:47:23.573 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in cloud mode on port 8983
+2022-07-23 07:47:23.573 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: D:\SpringApi\bin\solr
+2022-07-23 07:47:23.574 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2022-07-23T07:47:23.574886500Z
+2022-07-23 07:47:23.593 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: D:\SpringApi\bin\solr\server\solr
+2022-07-23 07:47:23.594 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from D:\SpringApi\bin\solr\server\solr\solr.xml
+2022-07-23 07:47:23.757 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@1b1cfb87, but no JMX reporters were configured - adding default JMX reporter.
+2022-07-23 07:47:24.875 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
+2022-07-23 07:47:25.214 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@161f6623[provider=null,keyStore=null,trustStore=null]
+2022-07-23 07:47:25.214 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@161f6623[provider=null,keyStore=null,trustStore=null]
+2022-07-23 07:47:25.488 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@65b97f47[provider=null,keyStore=null,trustStore=null]
+2022-07-23 07:47:25.489 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@65b97f47[provider=null,keyStore=null,trustStore=null]
+2022-07-23 07:47:25.589 INFO  (main) [   ] o.a.s.c.SolrZkServerProps Reading configuration from: D:\SpringApi\bin\solr\server\solr\zoo.cfg
+2022-07-23 07:47:25.595 INFO  (main) [   ] o.a.s.c.SolrZkServer STARTING EMBEDDED STANDALONE ZOOKEEPER SERVER at port 9983
+2022-07-23 07:47:25.595 WARN  (main) [   ] o.a.s.c.SolrZkServer Embedded Zookeeper is not recommended in production environments. See Reference Guide for details.
+2022-07-23 07:47:25.688 WARN  (Thread-11) [   ] o.a.z.s.ServerCnxnFactory maxCnxns is not configured, using default value 0.
+2022-07-23 07:47:26.104 INFO  (main) [   ] o.a.s.c.ZkContainer Zookeeper client=localhost:9983
+2022-07-23 07:47:26.151 INFO  (main) [   ] o.a.s.c.c.ConnectionManager Waiting for client to connect to ZooKeeper
+2022-07-23 07:47:26.179 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.ConnectionManager zkClient has connected
+2022-07-23 07:47:26.180 INFO  (main) [   ] o.a.s.c.c.ConnectionManager Client is connected to ZooKeeper
+2022-07-23 07:47:26.232 WARN  (main) [   ] o.a.s.c.ZkController Contents of zookeeper /security.json are world-readable; consider setting up ACLs as described in https://solr.apache.org/guide/zookeeper-access-control.html
+2022-07-23 07:47:26.317 INFO  (main) [   ] o.a.s.c.OverseerElectionContext I am going to be the leader 192.168.0.236:8983_solr
+2022-07-23 07:47:26.332 INFO  (main) [   ] o.a.s.c.Overseer Overseer (id=72066889185427456-192.168.0.236:8983_solr-n_0000000017) starting
+2022-07-23 07:47:26.457 INFO  (OverseerStateUpdate-72066889185427456-192.168.0.236:8983_solr-n_0000000017) [   ] o.a.s.c.Overseer Starting to work on the main queue : 192.168.0.236:8983_solr
+2022-07-23 07:47:26.458 INFO  (main) [   ] o.a.s.c.ZkController Register node as live in ZooKeeper:/live_nodes/192.168.0.236:8983_solr
+2022-07-23 07:47:26.508 INFO  (zkCallback-10-thread-1) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (0) -> (1)
+2022-07-23 07:47:26.564 INFO  (main) [   ] o.a.s.p.PackageLoader /packages.json updated to version -1
+2022-07-23 07:47:26.597 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2022-07-23 07:47:27.031 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2022-07-23 07:47:27.163 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1b1cfb87
+2022-07-23 07:47:27.163 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1b1cfb87
+2022-07-23 07:47:27.165 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1b1cfb87
+2022-07-23 07:47:27.241 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath D:\SpringApi\bin\solr\server\solr
+2022-07-23 07:47:27.242 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [Demo_shard1_replica_n1]
+2022-07-23 07:47:27.256 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient core cache for max 2147483647 cores with initial capacity of 1024
+2022-07-23 07:47:27.373 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.11.2
+2022-07-23 07:47:27.428 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.c.SolrConfig solrconfig.xml: <jmx> is no longer supported, use solr.xml:/metrics/reporter section instead
+2022-07-23 07:47:27.543 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.IndexSchema Schema name=default-config
+2022-07-23 07:47:27.986 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@6ffab045{/solr,file:///D:/SpringApi/bin/solr/server/solr-webapp/webapp/,AVAILABLE}{D:\SpringApi\bin\solr\server/solr-webapp/webapp}
+2022-07-23 07:47:28.032 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@1021f6c9{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2022-07-23 07:47:28.032 INFO  (main) [   ] o.e.j.s.Server Started @8478ms
+2022-07-23 07:47:28.066 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2022-07-23 07:47:28.066 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2022-07-23 07:47:28.067 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2022-07-23 07:47:28.067 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2022-07-23 07:47:28.067 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2022-07-23 07:47:28.432 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2022-07-23 07:47:28.644 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.11.2
+2022-07-23 07:47:28.645 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SolrConfig solrconfig.xml: <jmx> is no longer supported, use solr.xml:/metrics/reporter section instead
+2022-07-23 07:47:28.648 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.s.IndexSchema Schema name=default-config
+2022-07-23 07:47:28.663 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2022-07-23 07:47:28.663 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2022-07-23 07:47:28.664 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2022-07-23 07:47:28.664 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2022-07-23 07:47:28.664 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2022-07-23 07:47:28.809 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2022-07-23 07:47:28.937 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.CoreContainer Creating SolrCore 'Demo_shard1_replica_n1' using configuration from configset _schema, trusted=true
+2022-07-23 07:47:28.994 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.Demo.shard1.replica_n1' (registry 'solr.core.Demo.shard1.replica_n1') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1b1cfb87
+2022-07-23 07:47:29.004 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SolrCore [[Demo_shard1_replica_n1] ] Opening new SolrCore at [D:\SpringApi\bin\solr\server\solr\Demo_shard1_replica_n1], dataDir=[D:\SpringApi\bin\solr\server\solr\Demo_shard1_replica_n1\data\]
+2022-07-23 07:47:29.356 INFO  (qtp917768476-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=67
+2022-07-23 07:47:29.463 INFO  (qtp917768476-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=CLUSTERSTATUS&wt=json} status=0 QTime=9
+2022-07-23 07:47:29.948 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2022-07-23 07:47:29.948 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2022-07-23 07:47:29.976 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2022-07-23 07:47:29.977 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2022-07-23 07:47:30.381 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.r.ManagedResourceStorage Configured ZooKeeperStorageIO with znodeBase: /configs/_schema
+2022-07-23 07:47:30.386 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.r.ManagedResourceStorage Loaded null at path _rest_managed.json using ZooKeeperStorageIO:path=/configs/_schema
+2022-07-23 07:47:30.388 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.s.ZkIndexSchemaReader Creating ZooKeeper watch for the managed schema at /configs/_schema/managed-schema
+2022-07-23 07:47:30.391 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.s.ZkIndexSchemaReader Current schema version 1 is already the latest
+2022-07-23 07:47:30.404 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2022-07-23 07:47:30.416 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxQueryFrequency=0.01,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4}
+2022-07-23 07:47:30.442 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2022-07-23 07:47:30.482 INFO  (searcherExecutor-25-thread-1-processing-n:192.168.0.236:8983_solr x:Demo_shard1_replica_n1 c:Demo s:shard1 r:core_node2) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2022-07-23 07:47:30.482 INFO  (searcherExecutor-25-thread-1-processing-n:192.168.0.236:8983_solr x:Demo_shard1_replica_n1 c:Demo s:shard1 r:core_node2) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2022-07-23 07:47:30.495 INFO  (searcherExecutor-25-thread-1-processing-n:192.168.0.236:8983_solr x:Demo_shard1_replica_n1 c:Demo s:shard1 r:core_node2) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SolrCore [Demo_shard1_replica_n1]  Registered new searcher autowarm time: 0 ms
+2022-07-23 07:47:30.523 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase make sure parent is created /collections/Demo/leaders/shard1
+2022-07-23 07:47:30.537 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext Enough replicas found to continue.
+2022-07-23 07:47:30.537 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I may be the new leader - try and sync
+2022-07-23 07:47:30.538 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy Sync replicas to http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/
+2022-07-23 07:47:30.541 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy Sync Success - now sync replicas to me
+2022-07-23 07:47:30.544 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/ has no replicas
+2022-07-23 07:47:30.546 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase Creating leader registration node /collections/Demo/leaders/shard1/leader after winning as /collections/Demo/leader_elect/shard1/election/72066889185427456-core_node2-n_0000000017
+2022-07-23 07:47:30.556 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I am the new leader: http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/ shard1
+2022-07-23 07:47:30.575 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ZkController I am the leader, no recovery necessary
+2022-07-23 07:47:30.604 INFO  (zkCallback-10-thread-1) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/Demo/state.json] for collection [Demo] has occurred - updating... (live nodes size: [1])
+2022-07-23 07:47:30.605 INFO  (zkCallback-10-thread-2) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/Demo/state.json] for collection [Demo] has occurred - updating... (live nodes size: [1])
+2022-07-23 07:47:30.608 INFO  (zkCallback-10-thread-3) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/Demo/state.json] for collection [Demo] has occurred - updating... (live nodes size: [1])
+2022-07-23 07:47:30.609 INFO  (zkCallback-10-thread-4) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/Demo/state.json] for collection [Demo] has occurred - updating... (live nodes size: [1])
+2022-07-23 10:07:26.817 WARN  (main-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Client session timed out, have not heard from server in 8372092ms for session id 0x100087431f70000
+2022-07-23 10:07:26.817 WARN  (main-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Session 0x100087431f70000 for sever localhost/[0:0:0:0:0:0:0:1]:9983, Closing socket connection. Attempting reconnect except it is a SessionExpiredException. => org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 8372092ms for session id 0x100087431f70000
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1243)
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 8372092ms for session id 0x100087431f70000
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1243) ~[?:?]
+2022-07-23 10:07:26.818 WARN  (NIOWorkerThread-6) [   ] o.a.z.s.NIOServerCnxn Unexpected exception => EndOfStreamException: Unable to read additional data from client, it probably closed the socket: address = /[0:0:0:0:0:0:0:1]:63419, session = 0x100087431f70000
+	at org.apache.zookeeper.server.NIOServerCnxn.handleFailedRead(NIOServerCnxn.java:163)
+org.apache.zookeeper.server.ServerCnxn$EndOfStreamException: Unable to read additional data from client, it probably closed the socket: address = /[0:0:0:0:0:0:0:1]:63419, session = 0x100087431f70000
+	at org.apache.zookeeper.server.NIOServerCnxn.handleFailedRead(NIOServerCnxn.java:163) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:326) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 10:07:26.921 WARN  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.ConnectionManager Watcher org.apache.solr.common.cloud.ConnectionManager@4cfdee4d name: ZooKeeperConnection Watcher:localhost:9983 got event WatchedEvent state:Disconnected type:None path:null path: null type: None
+2022-07-23 10:07:26.922 WARN  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.ConnectionManager zkClient has disconnected
+2022-07-23 10:07:26.940 WARN  (ScheduledTrigger-16-thread-4) [   ] o.a.s.c.a.ScheduledTrigger ScheduledTrigger was not able to run event at scheduled time: 2022-07-23T08:38:57.405Z. Now: 2022-07-23T10:07:26.948Z
+2022-07-23 10:07:29.754 WARN  (SyncThread:0) [   ] o.a.z.s.p.FileTxnLog fsync-ing the write ahead log in SyncThread:0 took 2337ms which will adversely effect operation latency.File size is 67108880 bytes. See the ZooKeeper troubleshooting guide
+2022-07-23 10:07:29.904 WARN  (main-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Unable to reconnect to ZooKeeper service, session 0x100087431f70000 has expired
+2022-07-23 10:07:29.904 WARN  (main-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Session 0x100087431f70000 for sever localhost/127.0.0.1:9983, Closing socket connection. Attempting reconnect except it is a SessionExpiredException. => org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x100087431f70000 has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1419)
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x100087431f70000 has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1419) ~[?:?]
+	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154) ~[?:?]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:86) ~[?:?]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350) ~[?:?]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1275) ~[?:?]
+2022-07-23 10:07:29.907 WARN  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.ConnectionManager Watcher org.apache.solr.common.cloud.ConnectionManager@4cfdee4d name: ZooKeeperConnection Watcher:localhost:9983 got event WatchedEvent state:Expired type:None path:null path: null type: None
+2022-07-23 10:07:29.907 WARN  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.ConnectionManager Our previous ZooKeeper session was expired. Attempting to reconnect to recover relationship with ZooKeeper...
+2022-07-23 10:07:29.907 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.Overseer Overseer (id=72066889185427456-192.168.0.236:8983_solr-n_0000000017) closing
+2022-07-23 10:07:30.071 INFO  (OverseerStateUpdate-72066889185427456-192.168.0.236:8983_solr-n_0000000017) [   ] o.a.s.c.Overseer According to ZK I (id=72066889185427456-192.168.0.236:8983_solr-n_0000000017) am no longer a leader. propsId=null
+2022-07-23 10:07:30.071 INFO  (OverseerStateUpdate-72066889185427456-192.168.0.236:8983_solr-n_0000000017) [   ] o.a.s.c.Overseer Overseer Loop exiting : 192.168.0.236:8983_solr
+2022-07-23 10:07:30.075 INFO  (OverseerAutoScalingTriggerThread-72066889185427456-192.168.0.236:8983_solr-n_0000000017) [   ] o.a.s.c.a.OverseerTriggerThread OverseerTriggerThread woken up but we are closed, exiting.
+2022-07-23 10:07:30.076 INFO  (OverseerCollectionConfigSetProcessor-72066889185427456-192.168.0.236:8983_solr-n_0000000017) [   ] o.a.s.c.OverseerTaskProcessor According to ZK I (id=72066889185427456-192.168.0.236:8983_solr-n_0000000017) am no longer a leader. propsId=null
+2022-07-23 10:07:30.076 WARN  (ScheduledTrigger-16-thread-4) [   ] o.a.s.c.a.TriggerBase Exception updating trigger state '/autoscaling/triggerState/.scheduled_maintenance' => org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /autoscaling/triggerState/.scheduled_maintenance
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:134)
+org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /autoscaling/triggerState/.scheduled_maintenance
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:134) ~[?:?]
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:54) ~[?:?]
+	at org.apache.zookeeper.ZooKeeper.exists(ZooKeeper.java:2256) ~[?:?]
+	at org.apache.solr.common.cloud.SolrZkClient.lambda$exists$3(SolrZkClient.java:307) ~[?:?]
+	at org.apache.solr.common.cloud.ZkCmdExecutor.retryOperation(ZkCmdExecutor.java:79) ~[?:?]
+	at org.apache.solr.common.cloud.SolrZkClient.exists(SolrZkClient.java:307) ~[?:?]
+	at org.apache.solr.client.solrj.impl.ZkDistribStateManager.hasData(ZkDistribStateManager.java:60) ~[?:?]
+	at org.apache.solr.cloud.autoscaling.TriggerBase.saveState(TriggerBase.java:264) ~[?:?]
+	at org.apache.solr.cloud.autoscaling.ScheduledTriggers$TriggerWrapper.run(ScheduledTriggers.java:669) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[?:?]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[?:?]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 10:07:30.081 WARN  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.DefaultConnectionStrategy Connection expired - starting a new one...
+2022-07-23 10:07:30.123 WARN  (OverseerExitThread) [   ] o.a.s.c.Overseer Error communicating with ZooKeeper => org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /overseer_elect/leader
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:134)
+org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /overseer_elect/leader
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:134) ~[?:?]
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:54) ~[?:?]
+	at org.apache.zookeeper.ZooKeeper.getData(ZooKeeper.java:2358) ~[?:?]
+	at org.apache.solr.common.cloud.SolrZkClient.lambda$getData$6(SolrZkClient.java:343) ~[?:?]
+	at org.apache.solr.common.cloud.ZkCmdExecutor.retryOperation(ZkCmdExecutor.java:79) ~[?:?]
+	at org.apache.solr.common.cloud.SolrZkClient.getData(SolrZkClient.java:343) ~[?:?]
+	at org.apache.solr.cloud.Overseer$ClusterStateUpdater.checkIfIamStillLeader(Overseer.java:357) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 10:07:30.150 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.ConnectionManager Waiting for client to connect to ZooKeeper
+2022-07-23 10:07:30.190 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager zkClient has connected
+2022-07-23 10:07:30.190 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.ConnectionManager Client is connected to ZooKeeper
+2022-07-23 10:07:30.190 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.ZkController ZooKeeper session re-connected ... refreshing core states after session expiration.
+2022-07-23 10:07:30.195 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (1) -> (0)
+2022-07-23 10:07:30.248 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.Overseer Overseer (id=72066889185427456-192.168.0.236:8983_solr-n_0000000017) closing
+2022-07-23 10:07:30.248 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.Overseer Overseer (id=72066889185427456-192.168.0.236:8983_solr-n_0000000017) closing
+2022-07-23 10:07:30.250 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.Overseer Overseer (id=72066889185427456-192.168.0.236:8983_solr-n_0000000017) closing
+2022-07-23 10:07:30.253 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.Overseer Overseer (id=72066889185427456-192.168.0.236:8983_solr-n_0000000017) closing
+2022-07-23 10:07:30.256 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.OverseerElectionContext I am going to be the leader 192.168.0.236:8983_solr
+2022-07-23 10:07:30.271 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.Overseer Overseer (id=72066889185427457-192.168.0.236:8983_solr-n_0000000018) starting
+2022-07-23 10:07:30.282 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.ZkController Publish node=192.168.0.236:8983_solr as DOWN
+2022-07-23 10:07:30.291 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.ZkController Register node as live in ZooKeeper:/live_nodes/192.168.0.236:8983_solr
+2022-07-23 10:07:30.297 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.c.ZkController Registering core Demo_shard1_replica_n1 afterExpiration? true
+2022-07-23 10:07:30.297 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.DefaultConnectionStrategy Reconnected to ZooKeeper
+2022-07-23 10:07:30.297 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.ConnectionManager zkClient Connected: true
+2022-07-23 10:07:30.298 INFO  (zkCallback-10-thread-14) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (0) -> (1)
+2022-07-23 10:07:30.346 INFO  (OverseerStateUpdate-72066889185427457-192.168.0.236:8983_solr-n_0000000018) [   ] o.a.s.c.Overseer Starting to work on the main queue : 192.168.0.236:8983_solr
+2022-07-23 10:07:30.360 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase make sure parent is created /collections/Demo/leaders/shard1
+2022-07-23 10:07:30.384 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext Enough replicas found to continue.
+2022-07-23 10:07:30.384 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I may be the new leader - try and sync
+2022-07-23 10:07:30.384 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy Sync replicas to http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/
+2022-07-23 10:07:30.384 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy Sync Success - now sync replicas to me
+2022-07-23 10:07:30.384 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/ has no replicas
+2022-07-23 10:07:30.384 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase Creating leader registration node /collections/Demo/leaders/shard1/leader after winning as /collections/Demo/leader_elect/shard1/election/72066889185427457-core_node2-n_0000000018
+2022-07-23 10:07:30.389 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I am the new leader: http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/ shard1
+2022-07-23 10:07:30.390 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ZkController I am the leader, no recovery necessary
+2022-07-23 10:07:30.391 INFO  (zkCallback-10-thread-14) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/Demo/state.json] for collection [Demo] has occurred - updating... (live nodes size: [1])
+2022-07-23 10:07:30.393 INFO  (coreZkRegister-1-thread-2-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.ZkIndexSchemaReader Creating ZooKeeper watch for the managed schema at /configs/_schema/managed-schema
+2022-07-23 10:07:30.398 INFO  (coreZkRegister-1-thread-2-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.ZkIndexSchemaReader Current schema version 1 is already the latest
+2022-07-23 10:07:30.440 WARN  (ScheduledTrigger-31-thread-1) [   ] o.a.s.c.a.ScheduledTrigger ScheduledTrigger was not able to run event at scheduled time: 2022-07-23T08:38:57.405Z. Now: 2022-07-23T10:07:30.448Z
+2022-07-23 10:07:30.499 INFO  (Thread-14) [   ] o.a.s.c.SolrCore config update listener called for core Demo_shard1_replica_n1
+2022-07-23 10:07:30.907 INFO  (zkCallback-10-thread-14) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/Demo/state.json] for collection [Demo] has occurred - updating... (live nodes size: [1])
+2022-07-23 13:44:30.837 WARN  (zkConnectionManagerCallback-11-thread-1-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Client session timed out, have not heard from server in 6680260ms for session id 0x100087431f70001
+2022-07-23 13:44:30.848 WARN  (zkConnectionManagerCallback-11-thread-1-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Session 0x100087431f70001 for sever localhost/[0:0:0:0:0:0:0:1]:9983, Closing socket connection. Attempting reconnect except it is a SessionExpiredException. => org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 6680260ms for session id 0x100087431f70001
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1243)
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 6680260ms for session id 0x100087431f70001
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1243) ~[?:?]
+2022-07-23 13:44:30.852 WARN  (NIOWorkerThread-4) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.853 WARN  (NIOWorkerThread-1) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.853 WARN  (NIOWorkerThread-3) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.853 WARN  (NIOWorkerThread-6) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.854 WARN  (NIOWorkerThread-5) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.854 WARN  (NIOWorkerThread-7) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.854 WARN  (NIOWorkerThread-8) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.854 WARN  (NIOWorkerThread-8) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.854 WARN  (NIOWorkerThread-8) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.855 WARN  (NIOWorkerThread-8) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.855 WARN  (NIOWorkerThread-3) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.856 WARN  (NIOWorkerThread-6) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.857 WARN  (NIOWorkerThread-5) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.858 WARN  (NIOWorkerThread-7) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.858 WARN  (NIOWorkerThread-2) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.858 WARN  (NIOWorkerThread-2) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.858 WARN  (NIOWorkerThread-1) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.858 WARN  (NIOWorkerThread-8) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.858 WARN  (NIOWorkerThread-3) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.859 WARN  (NIOWorkerThread-6) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.859 WARN  (NIOWorkerThread-5) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.859 WARN  (NIOWorkerThread-7) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.859 WARN  (NIOWorkerThread-4) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.859 WARN  (NIOWorkerThread-2) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.859 WARN  (NIOWorkerThread-1) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.860 WARN  (NIOWorkerThread-8) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.860 WARN  (NIOWorkerThread-3) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.860 WARN  (NIOWorkerThread-6) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.860 WARN  (NIOWorkerThread-5) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.860 WARN  (NIOWorkerThread-7) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.860 WARN  (NIOWorkerThread-4) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.861 WARN  (NIOWorkerThread-2) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.861 WARN  (NIOWorkerThread-1) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.861 WARN  (NIOWorkerThread-8) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.861 WARN  (NIOWorkerThread-3) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.861 WARN  (NIOWorkerThread-6) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.861 WARN  (NIOWorkerThread-5) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.861 WARN  (NIOWorkerThread-7) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.861 WARN  (NIOWorkerThread-4) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.861 WARN  (NIOWorkerThread-2) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.862 WARN  (NIOWorkerThread-1) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.862 WARN  (NIOWorkerThread-8) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:30.862 WARN  (NIOWorkerThread-3) [   ] o.a.z.s.NIOServerCnxn Close of session 0x100087431f70001 => java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:411) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:324) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:31.055 WARN  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager Watcher org.apache.solr.common.cloud.ConnectionManager@4cfdee4d name: ZooKeeperConnection Watcher:localhost:9983 got event WatchedEvent state:Disconnected type:None path:null path: null type: None
+2022-07-23 13:44:31.055 WARN  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager zkClient has disconnected
+2022-07-23 13:44:32.127 WARN  (zkConnectionManagerCallback-11-thread-1-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Unable to reconnect to ZooKeeper service, session 0x100087431f70001 has expired
+2022-07-23 13:44:32.127 WARN  (zkConnectionManagerCallback-11-thread-1-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Session 0x100087431f70001 for sever localhost/127.0.0.1:9983, Closing socket connection. Attempting reconnect except it is a SessionExpiredException. => org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x100087431f70001 has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1419)
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x100087431f70001 has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1419) ~[?:?]
+	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154) ~[?:?]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:86) ~[?:?]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350) ~[?:?]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1275) ~[?:?]
+2022-07-23 13:44:32.127 WARN  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager Watcher org.apache.solr.common.cloud.ConnectionManager@4cfdee4d name: ZooKeeperConnection Watcher:localhost:9983 got event WatchedEvent state:Expired type:None path:null path: null type: None
+2022-07-23 13:44:32.128 WARN  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager Our previous ZooKeeper session was expired. Attempting to reconnect to recover relationship with ZooKeeper...
+2022-07-23 13:44:32.128 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427457-192.168.0.236:8983_solr-n_0000000018) closing
+2022-07-23 13:44:32.141 INFO  (OverseerStateUpdate-72066889185427457-192.168.0.236:8983_solr-n_0000000018) [   ] o.a.s.c.Overseer According to ZK I (id=72066889185427457-192.168.0.236:8983_solr-n_0000000018) am no longer a leader. propsId=null
+2022-07-23 13:44:32.141 INFO  (OverseerStateUpdate-72066889185427457-192.168.0.236:8983_solr-n_0000000018) [   ] o.a.s.c.Overseer Overseer Loop exiting : 192.168.0.236:8983_solr
+2022-07-23 13:44:32.144 INFO  (OverseerCollectionConfigSetProcessor-72066889185427457-192.168.0.236:8983_solr-n_0000000018) [   ] o.a.s.c.OverseerTaskProcessor According to ZK I (id=72066889185427457-192.168.0.236:8983_solr-n_0000000018) am no longer a leader. propsId=null
+2022-07-23 13:44:32.144 INFO  (OverseerAutoScalingTriggerThread-72066889185427457-192.168.0.236:8983_solr-n_0000000018) [   ] o.a.s.c.a.OverseerTriggerThread OverseerTriggerThread woken up but we are closed, exiting.
+2022-07-23 13:44:32.148 WARN  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.DefaultConnectionStrategy Connection expired - starting a new one...
+2022-07-23 13:44:32.157 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager Waiting for client to connect to ZooKeeper
+2022-07-23 13:44:32.161 WARN  (OverseerExitThread) [   ] o.a.s.c.Overseer Error communicating with ZooKeeper => org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /overseer_elect/leader
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:134)
+org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /overseer_elect/leader
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:134) ~[?:?]
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:54) ~[?:?]
+	at org.apache.zookeeper.ZooKeeper.getData(ZooKeeper.java:2358) ~[?:?]
+	at org.apache.solr.common.cloud.SolrZkClient.lambda$getData$6(SolrZkClient.java:343) ~[?:?]
+	at org.apache.solr.common.cloud.ZkCmdExecutor.retryOperation(ZkCmdExecutor.java:79) ~[?:?]
+	at org.apache.solr.common.cloud.SolrZkClient.getData(SolrZkClient.java:343) ~[?:?]
+	at org.apache.solr.cloud.Overseer$ClusterStateUpdater.checkIfIamStillLeader(Overseer.java:357) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 13:44:32.174 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager zkClient has connected
+2022-07-23 13:44:32.174 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager Client is connected to ZooKeeper
+2022-07-23 13:44:32.174 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.ZkController ZooKeeper session re-connected ... refreshing core states after session expiration.
+2022-07-23 13:44:32.178 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (1) -> (0)
+2022-07-23 13:44:32.215 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427457-192.168.0.236:8983_solr-n_0000000018) closing
+2022-07-23 13:44:32.215 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427457-192.168.0.236:8983_solr-n_0000000018) closing
+2022-07-23 13:44:32.220 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427457-192.168.0.236:8983_solr-n_0000000018) closing
+2022-07-23 13:44:32.225 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427457-192.168.0.236:8983_solr-n_0000000018) closing
+2022-07-23 13:44:32.226 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.OverseerElectionContext I am going to be the leader 192.168.0.236:8983_solr
+2022-07-23 13:44:32.257 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427458-192.168.0.236:8983_solr-n_0000000019) starting
+2022-07-23 13:44:32.273 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.ZkController Publish node=192.168.0.236:8983_solr as DOWN
+2022-07-23 13:44:32.304 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.ZkController Register node as live in ZooKeeper:/live_nodes/192.168.0.236:8983_solr
+2022-07-23 13:44:32.322 INFO  (OverseerStateUpdate-72066889185427458-192.168.0.236:8983_solr-n_0000000019) [   ] o.a.s.c.Overseer Starting to work on the main queue : 192.168.0.236:8983_solr
+2022-07-23 13:44:32.323 INFO  (zkCallback-10-thread-23) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (0) -> (1)
+2022-07-23 13:44:32.324 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.DefaultConnectionStrategy Reconnected to ZooKeeper
+2022-07-23 13:44:32.324 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager zkClient Connected: true
+2022-07-23 13:44:32.341 INFO  (zkCallback-10-thread-29) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/Demo/state.json] for collection [Demo] has occurred - updating... (live nodes size: [1])
+2022-07-23 13:44:32.348 INFO  (coreZkRegister-1-thread-4-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.c.ZkController Registering core Demo_shard1_replica_n1 afterExpiration? true
+2022-07-23 13:44:32.349 INFO  (coreZkRegister-1-thread-5-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.ZkIndexSchemaReader Creating ZooKeeper watch for the managed schema at /configs/_schema/managed-schema
+2022-07-23 13:44:32.355 INFO  (coreZkRegister-1-thread-5-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.ZkIndexSchemaReader Current schema version 1 is already the latest
+2022-07-23 13:44:32.356 INFO  (Thread-15) [   ] o.a.s.c.SolrCore config update listener called for core Demo_shard1_replica_n1
+2022-07-23 13:44:32.376 INFO  (coreZkRegister-1-thread-4-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase make sure parent is created /collections/Demo/leaders/shard1
+2022-07-23 13:44:32.388 INFO  (coreZkRegister-1-thread-4-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext Enough replicas found to continue.
+2022-07-23 13:44:32.388 INFO  (coreZkRegister-1-thread-4-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I may be the new leader - try and sync
+2022-07-23 13:44:32.389 INFO  (coreZkRegister-1-thread-4-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy Sync replicas to http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/
+2022-07-23 13:44:32.390 INFO  (coreZkRegister-1-thread-4-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy Sync Success - now sync replicas to me
+2022-07-23 13:44:32.391 INFO  (coreZkRegister-1-thread-4-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/ has no replicas
+2022-07-23 13:44:32.391 INFO  (coreZkRegister-1-thread-4-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase Creating leader registration node /collections/Demo/leaders/shard1/leader after winning as /collections/Demo/leader_elect/shard1/election/72066889185427458-core_node2-n_0000000019
+2022-07-23 13:44:32.394 INFO  (coreZkRegister-1-thread-4-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I am the new leader: http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/ shard1
+2022-07-23 13:44:32.400 INFO  (coreZkRegister-1-thread-4-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ZkController I am the leader, no recovery necessary
+2022-07-23 13:44:32.514 INFO  (zkCallback-10-thread-29) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/Demo/state.json] for collection [Demo] has occurred - updating... (live nodes size: [1])
+2022-07-23 18:15:04.773 WARN  (zkConnectionManagerCallback-11-thread-1-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Client session timed out, have not heard from server in 10058129ms for session id 0x100087431f70002
+2022-07-23 18:15:04.774 WARN  (zkConnectionManagerCallback-11-thread-1-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Session 0x100087431f70002 for sever localhost/127.0.0.1:9983, Closing socket connection. Attempting reconnect except it is a SessionExpiredException. => org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 10058129ms for session id 0x100087431f70002
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1243)
+org.apache.zookeeper.ClientCnxn$SessionTimeoutException: Client session timed out, have not heard from server in 10058129ms for session id 0x100087431f70002
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1243) ~[?:?]
+2022-07-23 18:15:04.775 WARN  (NIOWorkerThread-2) [   ] o.a.z.s.NIOServerCnxn Unexpected exception => EndOfStreamException: Unable to read additional data from client, it probably closed the socket: address = /127.0.0.1:56238, session = 0x100087431f70002
+	at org.apache.zookeeper.server.NIOServerCnxn.handleFailedRead(NIOServerCnxn.java:163)
+org.apache.zookeeper.server.ServerCnxn$EndOfStreamException: Unable to read additional data from client, it probably closed the socket: address = /127.0.0.1:56238, session = 0x100087431f70002
+	at org.apache.zookeeper.server.NIOServerCnxn.handleFailedRead(NIOServerCnxn.java:163) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:326) ~[?:?]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory$IOWorkRequest.doWork(NIOServerCnxnFactory.java:522) ~[?:?]
+	at org.apache.zookeeper.server.WorkerService$ScheduledWorkRequest.run(WorkerService.java:154) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 18:15:04.943 WARN  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager Watcher org.apache.solr.common.cloud.ConnectionManager@4cfdee4d name: ZooKeeperConnection Watcher:localhost:9983 got event WatchedEvent state:Disconnected type:None path:null path: null type: None
+2022-07-23 18:15:04.943 WARN  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager zkClient has disconnected
+2022-07-23 18:15:06.327 WARN  (zkConnectionManagerCallback-11-thread-1-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Unable to reconnect to ZooKeeper service, session 0x100087431f70002 has expired
+2022-07-23 18:15:06.327 WARN  (zkConnectionManagerCallback-11-thread-1-SendThread(localhost:9983)) [   ] o.a.z.ClientCnxn Session 0x100087431f70002 for sever localhost/127.0.0.1:9983, Closing socket connection. Attempting reconnect except it is a SessionExpiredException. => org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x100087431f70002 has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1419)
+org.apache.zookeeper.ClientCnxn$SessionExpiredException: Unable to reconnect to ZooKeeper service, session 0x100087431f70002 has expired
+	at org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1419) ~[?:?]
+	at org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:154) ~[?:?]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:86) ~[?:?]
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350) ~[?:?]
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1275) ~[?:?]
+2022-07-23 18:15:06.327 WARN  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager Watcher org.apache.solr.common.cloud.ConnectionManager@4cfdee4d name: ZooKeeperConnection Watcher:localhost:9983 got event WatchedEvent state:Expired type:None path:null path: null type: None
+2022-07-23 18:15:06.327 WARN  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager Our previous ZooKeeper session was expired. Attempting to reconnect to recover relationship with ZooKeeper...
+2022-07-23 18:15:06.327 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427458-192.168.0.236:8983_solr-n_0000000019) closing
+2022-07-23 18:15:06.330 INFO  (OverseerAutoScalingTriggerThread-72066889185427458-192.168.0.236:8983_solr-n_0000000019) [   ] o.a.s.c.a.OverseerTriggerThread OverseerTriggerThread woken up but we are closed, exiting.
+2022-07-23 18:15:06.331 INFO  (OverseerStateUpdate-72066889185427458-192.168.0.236:8983_solr-n_0000000019) [   ] o.a.s.c.Overseer According to ZK I (id=72066889185427458-192.168.0.236:8983_solr-n_0000000019) am no longer a leader. propsId=null
+2022-07-23 18:15:06.331 INFO  (OverseerStateUpdate-72066889185427458-192.168.0.236:8983_solr-n_0000000019) [   ] o.a.s.c.Overseer Overseer Loop exiting : 192.168.0.236:8983_solr
+2022-07-23 18:15:06.332 INFO  (OverseerCollectionConfigSetProcessor-72066889185427458-192.168.0.236:8983_solr-n_0000000019) [   ] o.a.s.c.OverseerTaskProcessor According to ZK I (id=72066889185427458-192.168.0.236:8983_solr-n_0000000019) am no longer a leader. propsId=null
+2022-07-23 18:15:06.333 WARN  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.DefaultConnectionStrategy Connection expired - starting a new one...
+2022-07-23 18:15:06.336 WARN  (OverseerExitThread) [   ] o.a.s.c.Overseer Error communicating with ZooKeeper => org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /overseer_elect/leader
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:134)
+org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /overseer_elect/leader
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:134) ~[?:?]
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:54) ~[?:?]
+	at org.apache.zookeeper.ZooKeeper.getData(ZooKeeper.java:2358) ~[?:?]
+	at org.apache.solr.common.cloud.SolrZkClient.lambda$getData$6(SolrZkClient.java:343) ~[?:?]
+	at org.apache.solr.common.cloud.ZkCmdExecutor.retryOperation(ZkCmdExecutor.java:79) ~[?:?]
+	at org.apache.solr.common.cloud.SolrZkClient.getData(SolrZkClient.java:343) ~[?:?]
+	at org.apache.solr.cloud.Overseer$ClusterStateUpdater.checkIfIamStillLeader(Overseer.java:357) ~[?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2022-07-23 18:15:06.341 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager Waiting for client to connect to ZooKeeper
+2022-07-23 18:15:06.366 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager zkClient has connected
+2022-07-23 18:15:06.367 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager Client is connected to ZooKeeper
+2022-07-23 18:15:06.367 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.ZkController ZooKeeper session re-connected ... refreshing core states after session expiration.
+2022-07-23 18:15:06.371 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (1) -> (0)
+2022-07-23 18:15:06.390 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427458-192.168.0.236:8983_solr-n_0000000019) closing
+2022-07-23 18:15:06.390 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427458-192.168.0.236:8983_solr-n_0000000019) closing
+2022-07-23 18:15:06.390 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427458-192.168.0.236:8983_solr-n_0000000019) closing
+2022-07-23 18:15:06.394 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427458-192.168.0.236:8983_solr-n_0000000019) closing
+2022-07-23 18:15:06.394 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.OverseerElectionContext I am going to be the leader 192.168.0.236:8983_solr
+2022-07-23 18:15:06.398 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.Overseer Overseer (id=72066889185427459-192.168.0.236:8983_solr-n_0000000020) starting
+2022-07-23 18:15:06.413 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.ZkController Publish node=192.168.0.236:8983_solr as DOWN
+2022-07-23 18:15:06.413 INFO  (OverseerStateUpdate-72066889185427459-192.168.0.236:8983_solr-n_0000000020) [   ] o.a.s.c.Overseer Starting to work on the main queue : 192.168.0.236:8983_solr
+2022-07-23 18:15:06.417 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.ZkController Register node as live in ZooKeeper:/live_nodes/192.168.0.236:8983_solr
+2022-07-23 18:15:06.422 INFO  (zkCallback-10-thread-40) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (0) -> (1)
+2022-07-23 18:15:06.423 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.DefaultConnectionStrategy Reconnected to ZooKeeper
+2022-07-23 18:15:06.423 INFO  (zkConnectionManagerCallback-11-thread-1-EventThread) [   ] o.a.s.c.c.ConnectionManager zkClient Connected: true
+2022-07-23 18:15:06.426 INFO  (coreZkRegister-1-thread-8-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.ZkIndexSchemaReader Creating ZooKeeper watch for the managed schema at /configs/_schema/managed-schema
+2022-07-23 18:15:06.427 INFO  (zkCallback-10-thread-39) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/Demo/state.json] for collection [Demo] has occurred - updating... (live nodes size: [1])
+2022-07-23 18:15:06.428 INFO  (coreZkRegister-1-thread-7-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.c.ZkController Registering core Demo_shard1_replica_n1 afterExpiration? true
+2022-07-23 18:15:06.430 INFO  (coreZkRegister-1-thread-8-processing-n:192.168.0.236:8983_solr) [   ] o.a.s.s.ZkIndexSchemaReader Current schema version 1 is already the latest
+2022-07-23 18:15:06.435 INFO  (Thread-16) [   ] o.a.s.c.SolrCore config update listener called for core Demo_shard1_replica_n1
+2022-07-23 18:15:06.447 INFO  (coreZkRegister-1-thread-7-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase make sure parent is created /collections/Demo/leaders/shard1
+2022-07-23 18:15:06.454 INFO  (coreZkRegister-1-thread-7-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext Enough replicas found to continue.
+2022-07-23 18:15:06.454 INFO  (coreZkRegister-1-thread-7-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I may be the new leader - try and sync
+2022-07-23 18:15:06.454 INFO  (coreZkRegister-1-thread-7-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy Sync replicas to http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/
+2022-07-23 18:15:06.454 INFO  (coreZkRegister-1-thread-7-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy Sync Success - now sync replicas to me
+2022-07-23 18:15:06.454 INFO  (coreZkRegister-1-thread-7-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.SyncStrategy http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/ has no replicas
+2022-07-23 18:15:06.454 INFO  (coreZkRegister-1-thread-7-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase Creating leader registration node /collections/Demo/leaders/shard1/leader after winning as /collections/Demo/leader_elect/shard1/election/72066889185427459-core_node2-n_0000000020
+2022-07-23 18:15:06.457 INFO  (coreZkRegister-1-thread-7-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I am the new leader: http://192.168.0.236:8983/solr/Demo_shard1_replica_n1/ shard1
+2022-07-23 18:15:06.458 INFO  (coreZkRegister-1-thread-7-processing-n:192.168.0.236:8983_solr) [c:Demo s:shard1 r:core_node2 x:Demo_shard1_replica_n1] o.a.s.c.ZkController I am the leader, no recovery necessary
+2022-07-23 18:15:06.565 INFO  (zkCallback-10-thread-39) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/Demo/state.json] for collection [Demo] has occurred - updating... (live nodes size: [1])
