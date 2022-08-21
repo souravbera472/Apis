@@ -23,12 +23,7 @@ public class SpringApiApplication {
             usePass = Boolean.parseBoolean(p.getProperty("USE_PASSWORD", "false"));
             pass = p.getProperty("TOMCAT_PASSWORD");
             System.out.println("Server: " + server);
-//            Properties q = new Properties();
-//            //q.replace("server.port",)
-//            q.setProperty("server.port","45450");
-//            q.store(new FileWriter("src/main/resources/application.properties"),"Write in port from main");
             if (server && pass.equals("sourav@123")) {
-                //Thread.sleep(5000);
                 startServer(args);
             } else if (server && usePass) {
                 startServer(args);

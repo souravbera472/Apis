@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class MongoDbUtility {
     private static final String mongoStr = "mongodb://" + getMongoUserPass() + getIpAndPort() + "/?authSource=" + getDb() + "&authMechanism=SCRAM-SHA-256";
     private static final String mongoDatabase = getDb();
@@ -22,10 +21,6 @@ public class MongoDbUtility {
         String user = Utillity.getWorkbenchValue("MONGO_USERNAME", "sourav");
         return user + ":" + "sourav@";
     }
-
-//    public static void main(String[] args) throws Exception {
-//        KLogger.info(getConnection());
-//    }
 
     private static String getIpAndPort() {
         try {
@@ -91,8 +86,8 @@ public class MongoDbUtility {
     public static void insertOneDocument(String collectionName, MongoClient client, Document doc) {
         MongoCollection<Document> document = getMongoCollection(collectionName, client);
         if (doc != null && !doc.isEmpty()) {
-            InsertOneResult insertOneResult = document.insertOne(doc);
-            KLogger.info(insertOneResult);
+            document.insertOne(doc);
+            KLogger.info("One documents insert successfully: " + doc);
         } else {
             KLogger.info("Document is empty or null: " + doc);
         }
@@ -101,9 +96,8 @@ public class MongoDbUtility {
     public static void insertMany(String collectionName, MongoClient client, List<Document> list) {
         MongoCollection<Document> collection = getMongoCollection(collectionName, client);
         if (list != null && !list.isEmpty()) {
-            InsertManyResult result = collection.insertMany(list);
+            collection.insertMany(list);
             KLogger.info("Data inserted successfully");
-            KLogger.info(result);
         }
     }
 
@@ -111,6 +105,10 @@ public class MongoDbUtility {
         MongoCollection<Document> collection = getMongoCollection(collectionName, client);
         collection.updateOne(filter, update);
 
+    }
+    public static void updateOneById(String collectionName, MongoClient client,String id, Document update){
+        MongoCollection<Document> collection = getMongoCollection(collectionName, client);
+        collection.updateOne(new Document("_id",id),update);
     }
 
     public static void deleteById(String collectionName, MongoClient client, String id) {
@@ -125,22 +123,5 @@ public class MongoDbUtility {
         DeleteResult deleteResult = collection.deleteMany(filter);
         KLogger.info(deleteResult.getDeletedCount());
     }
-
-
-//    public static void main(String[] args) {
-//        try (MongoClient mongoClient = getConnection()) {
-//            List list = new ArrayList();
-//           for(int i=0;i<500;i++){
-//               Document book = new Document();
-//               book.append("_id",Utillity.getUUID());
-//               book.append("bookName","book"+i);
-//               book.append("author","Author"+i);
-//               list.add(book);
-//           }
-//            insertMany("book",mongoClient,list);
-//        } catch (Exception e) {
-//            KLogger.error(e);
-//        }
-//    }
 
 }
