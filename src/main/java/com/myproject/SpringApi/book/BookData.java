@@ -16,14 +16,14 @@ import java.util.Map;
 public class BookData {
 
     @GetMapping("/all-book")
-    public Map<String ,Object> getAllBook(@RequestParam Map<String, String> mp) {
-        Map<String,JSONArray> mapData = new HashMap<>();
+    public Map<String, Object> getAllBook(@RequestParam Map<String, String> mp) {
+        Map<String, JSONArray> mapData = new HashMap<>();
         int limit = Integer.parseInt(mp.getOrDefault("limit", "10"));
         int offset = Integer.parseInt(mp.getOrDefault("offset", "0"));
-        String  filter = mp.getOrDefault("filter","");
-        Document docx = new Document();
-        Map<String ,Object> result = new HashMap<>();
-        result = BookUtility.getAllBookFromMongo(limit, offset,filter);
+        String filter = mp.getOrDefault("filter", "");
+        String sortBy = mp.getOrDefault("sortBy", "bookName");
+        String sortOrder = mp.getOrDefault("sortOrder", "asc");
+        Map<String, Object> result = BookUtility.getAllBookFromMongo(limit, offset, filter, sortBy, sortOrder);
         return result;
     }
 

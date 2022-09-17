@@ -10,21 +10,29 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import javax.print.Doc;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BookUtility {
 
-    public static Map<String, Object> getAllBookFromMongo(int limit, int offset, String filter) {
+    public static Map<String, Object> getAllBookFromMongo(int limit, int offset, String filter, String sortBy, String sortOrder) {
         Map<String, Object> result = new HashMap<>();
         String collectionName = "book";
         try (MongoClient client = MongoDbUtility.getConnection()) {
-            FindIterable<Document> data = MongoDbUtility.getPageQueryResult(collectionName, client, limit, offset);
+            Document filterDoc = new Document();
+            if (Utillity.stringIsNonEmpty(filter)) {
+                Document regex = new Document("$regex", ".*" + filter + ".*").append("$options", "si");
+                Document bookName = new Document("bookName", regex);
+                Document bookAuthor = new Document("bookAuthor", regex);
+                Document bookId = new Document("bookId", regex);
+                filterDoc.append("$or", Arrays.asList(bookName, bookAuthor, bookId));
+            }
+            FindIterable<Document> data = MongoDbUtility.getPageQueryResult(collectionName, client, filterDoc, sortBy, sortOrder, limit, offset);
             Document meta = new Document();
-            long count = MongoDbUtility.getCount(collectionName, client, filter);
-            meta.append("total", count).append("limit", limit).append("offset", offset);
+            long count = MongoDbUtility.getCount(collectionName, client, filterDoc);
+            meta.append("total", count).append("limit", limit)
+                    .append("offset", offset)
+                    .append("sortBy",sortBy)
+                    .append("sortOrder",sortOrder);
             List<Document> arrayData = new ArrayList<>();
             for (Document item : data) {
                 arrayData.add(item);

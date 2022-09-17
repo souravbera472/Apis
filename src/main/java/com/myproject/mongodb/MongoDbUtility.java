@@ -46,28 +46,31 @@ public class MongoDbUtility {
         return database.getCollection(collectionName);
     }
 
-    public static long getCountWithFilter(String collectionName, MongoClient client,String filter){
-        MongoCollection<Document> document = getMongoCollection(collectionName,client);
-         return document.count(new Document("filter",filter));
+    public static long getCountWithFilter(String collectionName, MongoClient client, Document filter) {
+        MongoCollection<Document> document = getMongoCollection(collectionName, client);
+        return document.count(filter);
     }
-    public static long getCountWithOutFilter(String collectionName, MongoClient client){
-        MongoCollection<Document> document = getMongoCollection(collectionName,client);
-      return document.count();
+
+    public static long getCountWithOutFilter(String collectionName, MongoClient client) {
+        MongoCollection<Document> document = getMongoCollection(collectionName, client);
+        return document.count();
     }
-    public static long getCount(String collectionName, MongoClient client, String filter){
-        return Utillity.stringIsEmptyOrNull(filter)?getCountWithOutFilter(collectionName,client):
-                getCountWithFilter(collectionName,client,filter);
+
+    public static long getCount(String collectionName, MongoClient client, Document filter) {
+        return getCountWithFilter(collectionName, client, filter);
     }
+
     public static FindIterable<Document> getAllResult(String collectionName, MongoClient client) {
         MongoCollection<Document> documents = getMongoCollection(collectionName, client);
         return documents.find();
     }
 
-    public static FindIterable<Document> getPageQueryResult(String collectionName, MongoClient client, int limit, int offset) {
+    public static FindIterable<Document> getPageQueryResult(String collectionName, MongoClient client, Document filter,
+                                                            String sortBy, String sortOrder, int limit, int offset) {
         MongoCollection<Document> documents = getMongoCollection(collectionName, client);
         limit = Utillity.getOrDefault(limit, 10);
         offset = Utillity.getOrDefault(offset, 0);
-        return documents.find().limit(limit).skip(offset);
+        return documents.find(filter).limit(limit).skip(offset).sort(new Document(sortBy, sortOrder.equals("asc")?1:-1));
     }
 
     public static FindIterable<Document> getDocumentByFilter(String collectionName, MongoClient client, Document filter) {
@@ -118,9 +121,10 @@ public class MongoDbUtility {
         collection.updateOne(filter, update);
 
     }
-    public static void updateOneById(String collectionName, MongoClient client,String id, Document update){
+
+    public static void updateOneById(String collectionName, MongoClient client, String id, Document update) {
         MongoCollection<Document> collection = getMongoCollection(collectionName, client);
-        collection.updateOne(new Document("_id",id),update);
+        collection.updateOne(new Document("_id", id), update);
     }
 
     public static void deleteById(String collectionName, MongoClient client, String id) {
