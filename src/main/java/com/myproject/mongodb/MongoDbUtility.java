@@ -46,6 +46,18 @@ public class MongoDbUtility {
         return database.getCollection(collectionName);
     }
 
+    public static long getCountWithFilter(String collectionName, MongoClient client,String filter){
+        MongoCollection<Document> document = getMongoCollection(collectionName,client);
+         return document.count(new Document("filter",filter));
+    }
+    public static long getCountWithOutFilter(String collectionName, MongoClient client){
+        MongoCollection<Document> document = getMongoCollection(collectionName,client);
+      return document.count();
+    }
+    public static long getCount(String collectionName, MongoClient client, String filter){
+        return Utillity.stringIsEmptyOrNull(filter)?getCountWithOutFilter(collectionName,client):
+                getCountWithFilter(collectionName,client,filter);
+    }
     public static FindIterable<Document> getAllResult(String collectionName, MongoClient client) {
         MongoCollection<Document> documents = getMongoCollection(collectionName, client);
         return documents.find();

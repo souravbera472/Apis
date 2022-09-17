@@ -1,4 +1,4 @@
-package com.myproject.SpringApi.user_book_req;
+package com.myproject.SpringApi.user_book;
 
 import com.mongodb.client.MongoClient;
 import com.myproject.logger.KLogger;
