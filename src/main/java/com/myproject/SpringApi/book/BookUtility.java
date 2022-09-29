@@ -6,10 +6,6 @@ import com.myproject.logger.KLogger;
 import com.myproject.mongodb.MongoDbUtility;
 import com.myproject.utill.Utillity;
 import org.bson.Document;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import javax.print.Doc;
 import java.util.*;
 
 public class BookUtility {

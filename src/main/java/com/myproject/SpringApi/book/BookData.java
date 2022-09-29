@@ -15,9 +15,9 @@ import java.util.Map;
 @RestController
 public class BookData {
 
+    // return all book data for every user.
     @GetMapping("/all-book")
     public Map<String, Object> getAllBook(@RequestParam Map<String, String> mp) {
-        Map<String, JSONArray> mapData = new HashMap<>();
         int limit = Integer.parseInt(mp.getOrDefault("limit", "10"));
         int offset = Integer.parseInt(mp.getOrDefault("offset", "0"));
         String filter = mp.getOrDefault("filter", "");
