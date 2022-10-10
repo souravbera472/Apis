@@ -15,10 +15,10 @@ public class LoginUtility {
     // get login result from mongodb using userName.
     // @collectionName: "user-collection"
     public static Document getLoginResult(String userName) {
-        Document response = new Document().append("error", "user name not fund");
+        Document response = new Document().append("error", "user name not found");
         try (MongoClient client = MongoDbUtility.getConnection()) {
             Document user = MongoDbUtility.getOneDocumentByFilter("user-collection", client, new Document("userName", userName));
-            if (user != null & !user.isEmpty()) {
+            if (user != null && !user.isEmpty()) {
                 //KLogger.info(user);
                 return user;
             }
@@ -70,6 +70,7 @@ public class LoginUtility {
                 .append("userName", emailId)
                 .append("fName", fName)
                 .append("lName", lName)
+                .append("role", "user")
                 .append("password", encryptPassword(password));
         try (MongoClient client = MongoDbUtility.getConnection()) {
             MongoDbUtility.insertOneDocument("user-collection", client, document);

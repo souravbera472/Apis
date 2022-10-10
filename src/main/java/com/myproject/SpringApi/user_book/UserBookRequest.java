@@ -8,7 +8,7 @@ import java.util.List;
 public class UserBookRequest {
     @PostMapping("/user/{userId}/req-book")
     public Document bookReq(@PathVariable String userId, @RequestBody List<String> bookIds) {
-        boolean check = BookRequestUtility.addBookOnReqCart(userId, bookIds);
+        boolean check = BookRequestUtility.addOrUpdateBookOnReqCart(userId, bookIds);
         Document message = new Document();
         if(check){
             message.put("user-message","Approve for book request submitted successfully");

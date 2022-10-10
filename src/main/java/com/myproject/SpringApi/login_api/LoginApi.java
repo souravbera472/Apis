@@ -16,6 +16,13 @@ public class LoginApi {
             KLogger.info(check);
             Document resultDoc = new Document();
             if (check) {
+                Document result = new Document();
+                result.append("userName",loginResult.getString("userName"))
+                        .append("fName",loginResult.getString("fName"))
+                        .append("lName",loginResult.getString("lName"))
+                        .append("id",loginResult.getString("_id"))
+                        .append("role",loginResult.getOrDefault("role","user"));
+                resultDoc.put("result",result);
                 resultDoc.put("user-message", "You have successfully login");
                 resultDoc.put("developer-message", "Credential is ok");
             } else {

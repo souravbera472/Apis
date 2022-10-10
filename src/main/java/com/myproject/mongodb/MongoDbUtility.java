@@ -48,12 +48,12 @@ public class MongoDbUtility {
 
     public static long getCountWithFilter(String collectionName, MongoClient client, Document filter) {
         MongoCollection<Document> document = getMongoCollection(collectionName, client);
-        return document.count(filter);
+        return document.countDocuments(filter);
     }
 
     public static long getCountWithOutFilter(String collectionName, MongoClient client) {
         MongoCollection<Document> document = getMongoCollection(collectionName, client);
-        return document.count();
+        return document.countDocuments();
     }
 
     public static long getCount(String collectionName, MongoClient client, Document filter) {
