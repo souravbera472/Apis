@@ -1,9 +1,12 @@
 package com.myproject.SpringApi.user_book;
 
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.myproject.logger.KLogger;
 import com.myproject.mongodb.MongoDbUtility;
 import org.bson.Document;
+
+import javax.print.Doc;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +26,8 @@ public class BookRequestUtility {
                 MongoDbUtility.insertOneDocument("user-book-req", client, reqDoc);
                 KLogger.info("Approve for book request submitted successfully");
             } else {
-                Document updateDoc = new Document().append("$push", new Document("book-info", new Document("$each",bookDoc)));
-                MongoDbUtility.updateOneById("user-book-req", client,userId,updateDoc);
+                Document updateDoc = MongoDbUtility.prepareDataForArray("book-info", bookDoc);
+                MongoDbUtility.updateOneById("user-book-req", client, userId, updateDoc);
                 KLogger.info("Approve for book request updated successfully");
             }
 
@@ -35,5 +38,35 @@ public class BookRequestUtility {
             KLogger.error(e);
             return false;
         }
+    }
+
+    public static Document getBookReqData(String id) {
+        try (MongoClient client = MongoDbUtility.getConnection()) {
+            Document reqDoc = MongoDbUtility.getDocumentByID("user-book-req", client, id);
+            List<Document> bookInfo = reqDoc.get("book-info", new ArrayList<>());
+            List<String> bookIds = new ArrayList<>();
+            for (Document document : bookInfo) {
+                bookIds.add(document.getString("_id"));
+            }
+            Document filter = new Document("_id", new Document("$in", bookIds));
+            FindIterable<Document> bookDoc = MongoDbUtility.getDocumentByFilter("book", client, filter);
+            List<Document> result = new ArrayList<>();
+            for (Document document : bookDoc) {
+                KLogger.info("BookDoc: " + document);
+                if (document.getInteger("quantity") > 0)
+                    document.put("isAvailable", true);
+                else
+                    document.put("isAvailable", false);
+
+                document.remove("quantity");
+                result.add(document);
+            }
+
+            return new Document("_id", id).append("book-info", result);
+
+        } catch (Exception e) {
+            KLogger.error(e);
+        }
+        return null;
     }
 }

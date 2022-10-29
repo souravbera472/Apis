@@ -8,6 +8,7 @@ import com.myproject.logger.KLogger;
 import org.bson.Document;
 import com.myproject.utill.Utillity;
 
+import javax.print.Doc;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -140,4 +141,10 @@ public class MongoDbUtility {
         KLogger.info(deleteResult.getDeletedCount());
     }
 
+    public static Document prepareDataForArray(String fieldName, List<Document> value) {
+        return new Document().append("$push", new Document(fieldName, new Document("$each", value)));
+    }
+    public static Document removeDataForArray(String fieldName, List<Document> bookIds){
+        return new Document().append("$pullAll",new Document(fieldName,bookIds));
+    }
 }
