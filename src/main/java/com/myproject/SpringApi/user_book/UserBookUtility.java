@@ -57,4 +57,31 @@ public class UserBookUtility {
         }
         return false;
     }
+
+    public static Document getNotificationCount(String id) {
+        try (MongoClient client = MongoDbUtility.getConnection()) {
+            Document result = new Document();
+            long totalReqCount = MongoDbUtility.getCountWithOutFilter("user-book-req", client);
+            result.put("totalReqCount", totalReqCount);
+            Document userReqDoc = MongoDbUtility.getDocumentByID("user-book-req", client, id);
+            if(userReqDoc!=null && !userReqDoc.isEmpty()) {
+                List<String> bookLen = userReqDoc.get("book-info", new ArrayList<>());
+                result.put("userReqCount",bookLen.size());
+            }
+            else
+                result.put("userReqCount",0L);
+
+            Document userBook = MongoDbUtility.getDocumentByID("user-book",client,id);
+            if(userBook!=null && !userBook.isEmpty()) {
+                List<String> bookLen = userBook.get("book-info", new ArrayList<>());
+                result.put("userBookCount",bookLen.size());
+            }
+            else
+                result.put("userBookCount",0L);
+            return result;
+        } catch (Exception e) {
+            KLogger.error(e);
+        }
+        return null;
+    }
 }
