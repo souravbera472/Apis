@@ -10,8 +10,9 @@ import java.util.List;
 public class UserBook {
 
     // add book in user-book collection using user id.
+    // TODO: 02-11-2022 change api end point ("approve/{id}/books")
     @PostMapping("/user/{id}/books")
-    public Document addBooksForUsers(@PathVariable String id, @RequestBody List<Document> bookInfo){
+    public Document addBooksForUsers(@PathVariable String id, @RequestBody List<Document> bookInfo, @RequestParam String userId){
         boolean check = UserBookUtility.addBooksForUsers(id,bookInfo);
         if(check){
             return new Document("user-message","Books added successfully")

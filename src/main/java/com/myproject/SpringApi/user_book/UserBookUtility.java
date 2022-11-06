@@ -20,6 +20,7 @@ public class UserBookUtility {
         return null;
     }
 
+    //todo need to change userId to approve Id
     public static boolean addBooksForUsers(String userId, List<Document> bookInfo) {
         try (MongoClient client = MongoDbUtility.getConnection()) {
             Document updateDoc = new Document();

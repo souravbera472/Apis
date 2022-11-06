@@ -38,11 +38,15 @@ public class UserBookRequest {
         message.put("developer-message","Request failed due to server down");
         return message;
     }
-    @DeleteMapping("/user/{id}/req-book")
+    @DeleteMapping("/user/{id}/remove-req-book")
     public Document removeBook(@PathVariable String id, @RequestBody List<String> bookIds){
-        Document message = new Document();
+        boolean check = BookRequestUtility.removeBooks(id, bookIds);
+        if(check){
+            int length = bookIds.size();
+            return new Document("user-message",length+(length==1?" book ":" books ")+"removed from your cart successfully");
+        }
 
-        return message;
+        return new Document("user-message","books not removed from your cart due to internal error");
     }
 
 }

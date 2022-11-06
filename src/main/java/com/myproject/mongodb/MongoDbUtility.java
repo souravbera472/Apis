@@ -2,14 +2,10 @@ package com.myproject.mongodb;
 
 import com.mongodb.client.*;
 import com.mongodb.client.result.DeleteResult;
-import com.mongodb.client.result.InsertManyResult;
-import com.mongodb.client.result.InsertOneResult;
+import com.mongodb.client.result.UpdateResult;
 import com.myproject.logger.KLogger;
 import org.bson.Document;
 import com.myproject.utill.Utillity;
-
-import javax.print.Doc;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -123,9 +119,14 @@ public class MongoDbUtility {
 
     }
 
-    public static void updateOneById(String collectionName, MongoClient client, String id, Document update) {
+    public static UpdateResult updateOneById(String collectionName, MongoClient client, String id, Document update) {
         MongoCollection<Document> collection = getMongoCollection(collectionName, client);
-        collection.updateOne(new Document("_id", id), update);
+        return collection.updateOne(new Document("_id", id), update);
+    }
+
+    public static UpdateResult updateMany(String collectionName, MongoClient client, Document filter, Document update){
+        MongoCollection<Document> collection = getMongoCollection(collectionName, client);
+        return collection.updateMany(filter, update);
     }
 
     public static void deleteById(String collectionName, MongoClient client, String id) {
@@ -144,7 +145,7 @@ public class MongoDbUtility {
     public static Document prepareDataForArray(String fieldName, List<Document> value) {
         return new Document().append("$push", new Document(fieldName, new Document("$each", value)));
     }
-    public static Document removeDataForArray(String fieldName, List<Document> bookIds){
-        return new Document().append("$pullAll",new Document(fieldName,bookIds));
+    public static Document removeDataForArray(String fieldName, Document document){
+        return new Document().append("$pull",new Document(fieldName,document));
     }
 }
