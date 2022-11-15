@@ -1,5 +1,6 @@
 package com.myproject.SpringApi.user_book;
 
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.myproject.logger.KLogger;
 import com.myproject.mongodb.MongoDbUtility;
@@ -20,7 +21,7 @@ public class UserBookUtility {
         return null;
     }
 
-    //todo need to change userId to approve Id
+    //todo need to change remove request submit for remove books.
     public static boolean addBooksForUsers(String userId, List<Document> bookInfo) {
         try (MongoClient client = MongoDbUtility.getConnection()) {
             Document updateDoc = new Document();
@@ -84,5 +85,49 @@ public class UserBookUtility {
             KLogger.error(e);
         }
         return null;
+    }
+
+
+    /**
+     *
+     * collection name: "user-request-renewal"
+     * @param userId
+     * @param bookIds
+     * @return
+     */
+    public static boolean renewalOrReturnBooks(String userId, List<String> bookIds, String collectionName) {
+
+        try (MongoClient client = MongoDbUtility.getConnection()) {
+            List<Document> bookDoc = new ArrayList<>();
+            FindIterable<Document> documentByFilter = MongoDbUtility.getDocumentByFilter("book", client, new Document("_id", new Document("$in", bookIds)));
+            for (Document document : documentByFilter) {
+                document.remove("quantity");
+                document.put("ct",System.currentTimeMillis());
+                bookDoc.add(document);
+            }
+            Document documentByID = MongoDbUtility.getDocumentByID(collectionName, client, userId);
+            if (documentByID == null || documentByID.isEmpty()) {
+                Document userDoc = MongoDbUtility.getDocumentByID("user-collection", client, userId);
+                String fName = userDoc.getString("fName");
+                String lName = userDoc.getString("lName");
+                Document reqDoc = new Document("_id", userId);
+                reqDoc.put("label",fName+" "+lName);
+                reqDoc.put("userName", userDoc.getString("userName"));
+                reqDoc.put("book-info", bookDoc);
+                MongoDbUtility.insertOneDocument(collectionName, client, reqDoc);
+                KLogger.info("Renewal or Return for book request submitted successfully");
+            } else {
+                Document updateDoc = MongoDbUtility.prepareDataForArray("book-info", bookDoc);
+                MongoDbUtility.updateOneById(collectionName, client, userId, updateDoc);
+                KLogger.info("Renewal or Return for book request updated successfully");
+            }
+
+            return true;
+
+        } catch (Exception e) {
+            KLogger.warn("Due to mongo server error request not submitted");
+            KLogger.error(e);
+            return false;
+        }
     }
 }

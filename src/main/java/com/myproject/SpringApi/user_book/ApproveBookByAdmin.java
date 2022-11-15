@@ -22,6 +22,25 @@ public class ApproveBookByAdmin {
      *
      * @param approveId
      * @param data
+     * {
+     *     "approveById":"752da97d-51d7-4441-a7ff-c02b6fa33c7b",
+     *     "approveBy":"Sourav Bera",
+     *     "bookInfo":[
+     *         {
+     *             "id" : "b293026f-fc39-48a0-925e-ac308aeedba3",
+     *             "bookId" : "cp1222553",
+     *             "bookName" : "Cpp Advance",
+     *             "bookAuthor" : "John brown"
+     *         },
+     *         {
+     *             "id" : "d71385e1-7f34-4ff5-ab6d-11f84ef3b522",
+     *             "bookId" : "cp12226544",
+     *             "bookName" : "Cpp Basic",
+     *             "bookAuthor" : "John brown"
+     *         }
+     *     ]
+     * }
+     *
      * @return
      */
     @PostMapping("approve/{approveId}/books")
@@ -47,4 +66,12 @@ public class ApproveBookByAdmin {
         }
         return null;
     }
+
+    @DeleteMapping("approve/{approveId}/books")
+    public Document removeBooksFromUsers(@PathVariable String approveId,List<String> bookIds){
+
+        return null;
+    }
+
+
 }

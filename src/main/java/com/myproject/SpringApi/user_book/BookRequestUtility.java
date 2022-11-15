@@ -15,10 +15,15 @@ public class BookRequestUtility {
     public static boolean addOrUpdateBookOnReqCart(String userId, List<String> bookIds) {
         try (MongoClient client = MongoDbUtility.getConnection()) {
             List<Document> bookDoc = new ArrayList<>();
-            for (String bookId : bookIds) {
-                Document bookData = MongoDbUtility.getOneDocumentByFilter("book", client, new Document("bookId", bookId));
-                bookData.remove("quantity");
-                bookDoc.add(bookData);
+//            for (String bookId : bookIds) {
+//                Document bookData = MongoDbUtility.getOneDocumentByFilter("book", client, new Document("bookId", bookId));
+//                bookData.remove("quantity");
+//                bookDoc.add(bookData);
+//            }
+            FindIterable<Document> documentByFilter = MongoDbUtility.getDocumentByFilter("book", client, new Document("bookId", new Document("$in", bookIds)));
+            for (Document document : documentByFilter) {
+                document.remove("quantity");
+                bookDoc.add(document);
             }
             Document documentByID = MongoDbUtility.getDocumentByID("user-book-req", client, userId);
             if (documentByID == null || documentByID.isEmpty()) {
@@ -93,5 +98,21 @@ public class BookRequestUtility {
             KLogger.error(e);
         }
         return false;
+    }
+
+    public static Document getRenewalOrReturnBookReqData(String userId, String type) {
+        try(MongoClient client = MongoDbUtility.getConnection()){
+            String collectionName = "";
+            switch (type.toLowerCase()) {
+                case "renewal" -> collectionName = "user-request-renewal";
+                case "return" -> collectionName = "user-request-return";
+                default -> KLogger.warn("Type is not match for return or renewal request");
+            }
+           return MongoDbUtility.getDocumentByID(collectionName, client, userId);
+
+        }catch (Exception e){
+            KLogger.error(e);
+        }
+        return null;
     }
 }
