@@ -3,25 +3,34 @@ package com.myproject.SpringApi.user_book;
 import org.bson.Document;
 import org.springframework.web.bind.annotation.*;
 
-import javax.print.Doc;
 import java.util.List;
 
 @RestController
 public class UserBook {
 
-    // add book in user-book collection using user id.
-    @PostMapping("/user/{id}/books")
-    public Document addBooksForUsers(@PathVariable String id, @RequestBody List<Document> bookInfo){
-        boolean check = UserBookUtility.addBooksForUsers(id,bookInfo);
-        if(check){
-            return new Document("user-message","Books added successfully")
-                    .append("developer-message","Book added successfully in mongo");
+    @PostMapping("/user/{id}/renewal-book-request")
+    public Document renewalBooksReq(@PathVariable String id,@RequestParam String type, @RequestBody List<String> bookIds){
+        if(type.equalsIgnoreCase("renewal")){
+            boolean check = UserBookUtility.renewalOrReturnBooks(id, bookIds, "user-request-renewal");
+            if(check){
+                int length = bookIds.size();
+                return new Document("user-message", length + (length == 1 ? " book " : " books ") + "renewal request submitted successfully");
+            }
+            else
+                return new Document("user-message","Renewal request submission failed due to internal error");
         }
         else {
-            return new Document("user-message","Books not added due to internal error")
-                    .append("developer-message","Book insertion failed due server error");
+            boolean check = UserBookUtility.renewalOrReturnBooks(id, bookIds, "user-request-return");
+            if(check){
+                int length = bookIds.size();
+                return new Document("user-message", length + (length == 1 ? " book " : " books ") + "return request submitted successfully");
+            }
+            else
+                return new Document("user-message","Return request submission failed due to internal error");
         }
+        //return null;
     }
+
 
     // get book data from using user id.
     @GetMapping("/user/{id}/books")

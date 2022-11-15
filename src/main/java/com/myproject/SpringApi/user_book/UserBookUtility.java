@@ -1,5 +1,6 @@
 package com.myproject.SpringApi.user_book;
 
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.myproject.logger.KLogger;
 import com.myproject.mongodb.MongoDbUtility;
@@ -12,50 +13,11 @@ import java.util.List;
 public class UserBookUtility {
     public static Document getUserBooks(String userId) {
         try (MongoClient client = MongoDbUtility.getConnection()) {
-            Document document = MongoDbUtility.getDocumentByID("user-book", client, userId);
-            return document;
+            return MongoDbUtility.getDocumentByID("user-book", client, userId);
         } catch (Exception e) {
             KLogger.error(e);
         }
         return null;
-    }
-
-    public static boolean addBooksForUsers(String userId, List<Document> bookInfo) {
-        try (MongoClient client = MongoDbUtility.getConnection()) {
-            Document updateDoc = new Document();
-            List<Document> updateList = new ArrayList<>();
-            for (Document document : bookInfo) {
-                Document doc = new Document();
-                String bookId = document.getString("bookId");
-                String bookName = document.getString("bookName");
-                String bookAuthor = document.getString("bookAuthor");
-                String approvedBy = document.getString("approvedBy");
-                doc.put("id", bookId);
-                doc.put("name", bookName);
-                doc.put("author", bookAuthor);
-                doc.put("approvedBy", approvedBy);
-                doc.put("ct", System.currentTimeMillis());
-                doc.put("lu", System.currentTimeMillis());
-                updateList.add(doc);
-            }
-            Document userDoc = MongoDbUtility.getDocumentByID("user-collection", client, userId);
-            Document userBookDoc = MongoDbUtility.getDocumentByID("user-book", client, userId);
-            if (userBookDoc == null || userBookDoc.isEmpty()) {
-                updateDoc.append("_id", userId)
-                        .append("userName", userDoc.getString("userName"))
-                        .append("fName", userDoc.getString("fName"))
-                        .append("lName", userDoc.getString("lName"))
-                        .append("book-info", updateList);
-                MongoDbUtility.insertOneDocument("user-book", client, updateDoc);
-            } else {
-                updateDoc = MongoDbUtility.prepareDataForArray("book-info", updateList);
-                MongoDbUtility.updateOneById("user-book", client, userId, updateDoc);
-            }
-            return true;
-        } catch (Exception e) {
-            KLogger.error(e);
-        }
-        return false;
     }
 
     public static Document getNotificationCount(String id) {
@@ -83,5 +45,49 @@ public class UserBookUtility {
             KLogger.error(e);
         }
         return null;
+    }
+
+
+    /**
+     *
+     * collection name: "user-request-renewal"
+     * @param userId
+     * @param bookIds
+     * @return
+     */
+    public static boolean renewalOrReturnBooks(String userId, List<String> bookIds, String collectionName) {
+
+        try (MongoClient client = MongoDbUtility.getConnection()) {
+            List<Document> bookDoc = new ArrayList<>();
+            FindIterable<Document> documentByFilter = MongoDbUtility.getDocumentByFilter("book", client, new Document("_id", new Document("$in", bookIds)));
+            for (Document document : documentByFilter) {
+                document.remove("quantity");
+                document.put("ct",System.currentTimeMillis());
+                bookDoc.add(document);
+            }
+            Document documentByID = MongoDbUtility.getDocumentByID(collectionName, client, userId);
+            if (documentByID == null || documentByID.isEmpty()) {
+                Document userDoc = MongoDbUtility.getDocumentByID("user-collection", client, userId);
+                String fName = userDoc.getString("fName");
+                String lName = userDoc.getString("lName");
+                Document reqDoc = new Document("_id", userId);
+                reqDoc.put("label",fName+" "+lName);
+                reqDoc.put("userName", userDoc.getString("userName"));
+                reqDoc.put("book-info", bookDoc);
+                MongoDbUtility.insertOneDocument(collectionName, client, reqDoc);
+                KLogger.info("Renewal or Return for book request submitted successfully");
+            } else {
+                Document updateDoc = MongoDbUtility.prepareDataForArray("book-info", bookDoc);
+                MongoDbUtility.updateOneById(collectionName, client, userId, updateDoc);
+                KLogger.info("Renewal or Return for book request updated successfully");
+            }
+
+            return true;
+
+        } catch (Exception e) {
+            KLogger.warn("Due to mongo server error request not submitted");
+            KLogger.error(e);
+            return false;
+        }
     }
 }
