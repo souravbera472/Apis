@@ -15,11 +15,6 @@ public class BookRequestUtility {
     public static boolean addOrUpdateBookOnReqCart(String userId, List<String> bookIds) {
         try (MongoClient client = MongoDbUtility.getConnection()) {
             List<Document> bookDoc = new ArrayList<>();
-//            for (String bookId : bookIds) {
-//                Document bookData = MongoDbUtility.getOneDocumentByFilter("book", client, new Document("bookId", bookId));
-//                bookData.remove("quantity");
-//                bookDoc.add(bookData);
-//            }
             FindIterable<Document> documentByFilter = MongoDbUtility.getDocumentByFilter("book", client, new Document("bookId", new Document("$in", bookIds)));
             for (Document document : documentByFilter) {
                 document.remove("quantity");

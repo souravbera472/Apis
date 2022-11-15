@@ -8,20 +8,6 @@ import java.util.List;
 @RestController
 public class UserBook {
 
-    // Todo change this api to /user/{id}/remove-book-request
-    @PostMapping("/user/{id}/books")
-    public Document addBooksForUsers(@PathVariable String id, @RequestBody List<Document> bookInfo, @RequestParam String userId){
-        boolean check = UserBookUtility.addBooksForUsers(id,bookInfo);
-        if(check){
-            return new Document("user-message","Books added successfully")
-                    .append("developer-message","Book added successfully in mongo");
-        }
-        else {
-            return new Document("user-message","Books not added due to internal error")
-                    .append("developer-message","Book insertion failed due server error");
-        }
-    }
-
     @PostMapping("/user/{id}/renewal-book-request")
     public Document renewalBooksReq(@PathVariable String id,@RequestParam String type, @RequestBody List<String> bookIds){
         if(type.equalsIgnoreCase("renewal")){
