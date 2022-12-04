@@ -62,4 +62,19 @@ public class UserBookRequest {
         return new Document("user-message", "books not removed from your cart due to internal error");
     }
 
+
+    @DeleteMapping("/user/{id}/remove-renewal-book")
+    public Document removeRenewalBooks(@PathVariable String id,@RequestParam String type, @RequestBody List<String> bookIds) {
+        boolean check = BookRequestUtility.removeRenewalBooks(id,type,bookIds);
+        if (check) {
+            int length = bookIds.size();
+            if(type.equalsIgnoreCase("renewal"))
+              return new Document("user-message", length + (length == 1 ? " book " : " books ") + "removed from your renewal cart successfully");
+            else
+                return new Document("user-message", length + (length == 1 ? " book " : " books ") + "removed from your return cart successfully");
+        }
+
+        return new Document("user-message", "books not removed from your cart due to internal error");
+    }
+
 }

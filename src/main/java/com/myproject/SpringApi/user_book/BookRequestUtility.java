@@ -110,4 +110,30 @@ public class BookRequestUtility {
         }
         return null;
     }
+
+    public static boolean removeRenewalBooks(String userId, String type, List<String> bookIds) {
+        try(MongoClient client = MongoDbUtility.getConnection()){
+            String collectionName = "";
+            switch (type.toLowerCase()) {
+                case "renewal" -> collectionName = "user-request-renewal";
+                case "return" -> collectionName = "user-request-return";
+                default -> KLogger.warn("Type is not match for return or renewal request");
+            }
+            Document documentByID = MongoDbUtility.getDocumentByID(collectionName, client, userId);
+            List<String> bookCounts = documentByID.get("book-info",new ArrayList<>());
+            if(bookCounts.size() == bookIds.size()){
+                MongoDbUtility.deleteById(collectionName,client,userId);
+            }
+            else {
+                Document updateDoc = MongoDbUtility.removeDataForArray("book-info",new Document("_id",new Document("$in",bookIds)));
+                UpdateResult updateResult = MongoDbUtility.updateOneById(collectionName, client, userId, updateDoc);
+                KLogger.info(updateResult);
+            }
+            return true;
+
+        }catch (Exception e){
+            KLogger.error(e);
+        }
+        return false;
+    }
 }
