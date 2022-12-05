@@ -1,7 +1,10 @@
 package com.myproject.SpringApi.user_book;
 
 import com.myproject.logger.KLogger;
+import com.myproject.utill.Utillity;
 import org.bson.Document;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
@@ -9,13 +12,26 @@ import java.util.*;
 public class ApproveBookByAdmin {
 
     @GetMapping("/approve-data")
-    public Document getApproveData(@RequestParam Map<String, String> mp){
+    public ResponseEntity<Document> getApproveData(@RequestParam Map<String, String> mp){
         String filter = mp.getOrDefault("filter","");
        Document document = ApproveBookUtility.getAllReqBook(filter);
         if(document!=null){
-            return document;
+            return ResponseEntity.status(HttpStatus.OK).body(document);
         }
-        return new Document("user-message","No data available");
+        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(new Document("user-message","Server not responding due some internal error"));
+    }
+
+
+    @GetMapping("/req-renewal-books")
+    //@ResponseStatus(code = HttpStatus.OK, reason = "OK")
+    public ResponseEntity<Document> getAllRenewalBooks(@RequestParam Map<String, String> reqMap){
+        String filter = reqMap.getOrDefault("filter","");
+        String type = reqMap.get("type");
+        Document document = ApproveBookUtility.getAllRenewalBooks(filter,type);
+        if(Utillity.docIsNonEmpty(document))
+            return ResponseEntity.status(HttpStatus.OK).body(document);
+
+        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(new Document("user-message","Server not responding due some internal error"));
     }
 
     /**
@@ -47,7 +63,7 @@ public class ApproveBookByAdmin {
     public Document postApproveData(@PathVariable String approveId,@RequestBody Map<String,Object> data){
         try{
             List<Map<String,String>> bookInfo = (List<Map<String, String>>) data.get("bookInfo");
-            KLogger.info("Book info: "+bookInfo);
+            //KLogger.info("Book info: "+bookInfo);
             if(bookInfo.size()==0)
                 return new Document("message","No data available");
             String approveById = data.getOrDefault("approveById","").toString();
@@ -65,6 +81,19 @@ public class ApproveBookByAdmin {
             KLogger.error(e);
         }
         return null;
+    }
+
+    @PostMapping("/renewal/{id}/books")
+    public ResponseEntity<Document> updateRenewalOrReturnBooks(@PathVariable String id,@RequestParam String type,@RequestBody Map<String,Object> reqMap){
+        List<String>bookIds = (List<String>) reqMap.get("bookIds");
+        String approveById = reqMap.getOrDefault("approveById","").toString();
+        String approveBy = reqMap.getOrDefault("approveBy","").toString();
+        boolean check = ApproveBookUtility.checkRenewalOrReturnBooks(id,approveById,approveBy,type,bookIds);
+        if(check){
+            return ResponseEntity.status(HttpStatus.CREATED).body((type.equalsIgnoreCase("renewal"))?
+                    new Document("user-message","Books Renewal Successfully"): new Document("user-message","Books Returned Successfully"));
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Document("user-message","Internal Error"));
     }
 
     @DeleteMapping("approve/{approveId}/books")

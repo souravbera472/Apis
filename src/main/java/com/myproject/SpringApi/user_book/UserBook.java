@@ -19,7 +19,7 @@ public class UserBook {
             else
                 return new Document("user-message","Renewal request submission failed due to internal error");
         }
-        else {
+        else if (type.equalsIgnoreCase("return")){
             boolean check = UserBookUtility.renewalOrReturnBooks(id, bookIds, "user-request-return");
             if(check){
                 int length = bookIds.size();
@@ -28,7 +28,7 @@ public class UserBook {
             else
                 return new Document("user-message","Return request submission failed due to internal error");
         }
-        //return null;
+        return new Document("user-message","Type is not valid");
     }
 
 

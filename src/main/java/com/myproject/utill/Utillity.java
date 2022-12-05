@@ -1,16 +1,12 @@
 package com.myproject.utill;
 
 import com.myproject.logger.KLogger;
+import org.bson.Document;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
-import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.Properties;
 import java.util.UUID;
@@ -28,6 +24,10 @@ public class Utillity {
 
     public static boolean stringIsNonEmpty(String st) {
         return st != null && !st.isEmpty();
+    }
+
+    public static boolean docIsNonEmpty(Document document){
+        return document != null && !document.isEmpty();
     }
 
     public static int getOrDefault(int val, int dVal) {
