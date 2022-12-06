@@ -14,6 +14,11 @@ public class RuntimeConfigure {
         String hostname = InetAddress.getLocalHost().getHostAddress();
         writeOnProperties(hostname, "SERVER_IP", "workbench.properties");
         writePortForTomcat();
+        try {
+            IpConfig.IpBindForMongo();
+        } catch (IOException e) {
+            KLogger.error(e);
+        }
     }
 
     private static void writePortForTomcat() {
