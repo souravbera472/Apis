@@ -2,6 +2,8 @@ package com.myproject.SpringApi.login_api;
 
 import com.myproject.logger.KLogger;
 import org.bson.Document;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,13 +21,15 @@ public class RegistrationApi {
      */
     @PostMapping("/registration")
     @ResponseBody
-    public Document registration(@RequestBody registrationType docx) {
+    public ResponseEntity<Document> registration(@RequestBody registrationType docx) {
         boolean check = LoginUtility.addUserInMongo(docx);
         if (check) {
-            return new Document("user-message", "Registration successful")
+            Document document = new Document("user-message", "Registration successful")
                     .append("developer-message", "Data insert successfully");
+            return ResponseEntity.status(HttpStatus.CREATED).body(document);
         }
-        return new Document("user-message", "Email Id already exits ")
-                .append("developer-message","userName already present in Db");
+        Document document = new Document("user-message", "Email Id already exits ")
+                .append("developer-message", "userName already present in Db");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(document);
     }
 }
