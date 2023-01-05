@@ -1,11 +1,14 @@
 package com.myproject.mongodb;
 
 import com.mongodb.client.*;
+import com.mongodb.client.model.Collation;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import com.myproject.logger.KLogger;
 import org.bson.Document;
 import com.myproject.utill.Utillity;
+
+import javax.print.Doc;
 import java.util.List;
 
 
@@ -67,7 +70,7 @@ public class MongoDbUtility {
         MongoCollection<Document> documents = getMongoCollection(collectionName, client);
         limit = Utillity.getOrDefault(limit, 10);
         offset = Utillity.getOrDefault(offset, 0);
-        return documents.find(filter).limit(limit).skip(offset).sort(new Document(sortBy, sortOrder.equals("asc")?1:-1));
+        return documents.find(filter).limit(limit).skip(offset).sort(new Document(sortBy, sortOrder.equals("asc") ? 1 : -1));
     }
 
     public static FindIterable<Document> getDocumentByFilter(String collectionName, MongoClient client, Document filter) {
@@ -124,7 +127,7 @@ public class MongoDbUtility {
         return collection.updateOne(new Document("_id", id), update);
     }
 
-    public static UpdateResult updateMany(String collectionName, MongoClient client, Document filter, Document update){
+    public static UpdateResult updateMany(String collectionName, MongoClient client, Document filter, Document update) {
         MongoCollection<Document> collection = getMongoCollection(collectionName, client);
         return collection.updateMany(filter, update);
     }
@@ -145,7 +148,8 @@ public class MongoDbUtility {
     public static Document prepareDataForArray(String fieldName, List<Document> value) {
         return new Document().append("$push", new Document(fieldName, new Document("$each", value)));
     }
-    public static Document removeDataForArray(String fieldName, Document document){
-        return new Document().append("$pull",new Document(fieldName,document));
+
+    public static Document removeDataForArray(String fieldName, Document document) {
+        return new Document().append("$pull", new Document(fieldName, document));
     }
 }

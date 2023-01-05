@@ -4,6 +4,8 @@ import com.myproject.logger.KLogger;
 import com.myproject.utill.Utillity;
 import org.bson.Document;
 import org.json.JSONArray;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -28,19 +30,19 @@ public class BookData {
     }
 
     @PostMapping("/add-book")
-    public Document addBook(@RequestBody bookType bookDocx) {
+    public ResponseEntity<Document> addBook(@RequestBody bookType bookDocx) {
         boolean check = BookUtility.addBookInMongo(bookDocx);
         Document document = new Document();
         if (check) {
             String bookName = bookDocx.getBookName();
             document.append("user-message", bookDocx.getQuantity() + " " + bookName + " book(s) added successfully in your library");
             document.append("developer-message", "book docs added successfully");
-            return document;
+            return ResponseEntity.status(HttpStatus.CREATED).body(document);
         } else {
             document.append("user-message", "Book addition failed in your library");
             document.append("developer-message", "book docs addition failed due mongo-server down");
         }
-        return document;
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(document);
     }
 
     @PostMapping("/user/{userId}/req-book/{bookId}")

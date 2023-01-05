@@ -2,4 +2,4 @@
 set dir="%cd%"
 set dir=%dir:"=%
 @echo Starting Mongodb server...
-bin\MongoDB\Server\5.0\bin\mongod --config %DIR%\bin\MongoDB\Server\5.0\bin\mongod.cfg > logs/mongo.log
+bin\MongoDB\Server\5.0\bin\mongod --config %DIR%\bin\MongoDB\Server\5.0\bin\mongod.cfg
